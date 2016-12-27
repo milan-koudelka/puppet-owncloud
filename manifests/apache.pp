@@ -9,6 +9,8 @@ class owncloud::apache {
       default_vhost => false,
       mpm_module    => 'prefork',
       purge_configs => false,
+      keepalive	    => 'On',
+      keepalive_timeout => 7200
     }
 
     include '::apache::mod::php'
