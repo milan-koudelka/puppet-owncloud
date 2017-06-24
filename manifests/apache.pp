@@ -13,7 +13,9 @@ class owncloud::apache {
       keepalive_timeout => 7200
     }
 
-    include '::apache::mod::php'
+    if $::owncloud::manage_php {
+      include '::apache::mod::php'
+    }
 
     if $::osfamily == 'Debian' {
       file { ['/etc/apache2/sites-enabled/000-default', '/etc/apache2/sites-enabled/000-default.conf']:

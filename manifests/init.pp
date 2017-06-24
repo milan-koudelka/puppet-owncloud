@@ -34,6 +34,7 @@ class owncloud (
 
   validate_bool($manage_apache)
   validate_bool($manage_db)
+  validate_bool($manage_php)
   validate_bool($manage_repo)
   validate_bool($manage_skeleton)
   validate_bool($manage_vhost)
