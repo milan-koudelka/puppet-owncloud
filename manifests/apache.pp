@@ -63,6 +63,7 @@ class owncloud::apache {
         port         => $::owncloud::https_port,
         docroot      => $::owncloud::documentroot,
         directories  => $vhost_directories,
+        setenvif     => ['Authorization "(.*)" HTTP_AUTHORIZATION=$1'],
         headers      => [ 'always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"' ],
         ssl          => true,
         ssl_ca       => $::owncloud::ssl_ca,
